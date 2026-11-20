@@ -4,3 +4,4 @@ Homepage and privacy policy for the ZECODEX Automation tool (a private, single-u
 
 - https://theofilus31.github.io/zecodex-automation/
 - https://theofilus31.github.io/zecodex-automation/privacy.html
+- https://theofilus31.github.io/zecodex-automation/terms.html
