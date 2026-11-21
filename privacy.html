@@ -11,7 +11,7 @@
 </head>
 <body>
 <h1>Privacy Policy</h1>
-<p><em>Last updated: November 20, 2026</em></p>
+<p><em>Last updated: November 21, 2026</em></p>
 
 <p>ZECODEX Automation ("the app") is a private tool used only by the owner of the ZECODEX YouTube channel to manage
 that channel. This policy explains what data the app accesses and how it is used, stored, shared and deleted.</p>
@@ -28,6 +28,11 @@ that channel. This policy explains what data the app accesses and how it is used
   <li><strong>YouTube Analytics data</strong> for the connected channel (views, watch time, retention, traffic sources, audience country, age and gender in aggregate), to plan content.</li>
   <li><strong>Video upload access</strong>, to upload videos the channel owner has approved.</li>
   <li><strong>Public YouTube data</strong> (search results and public video statistics), to identify trending topics and to measure when the channel's own videos gain views.</li>
+  <li><strong>Comments on the channel's own videos</strong> (comment text, the commenter's public display name, like count and
+      date), to reply to viewers as the channel. This uses the <code>youtube.force-ssl</code> permission. The app only reads
+      comments and posts replies on the owner's own videos; it never deletes, edits, hides or moderates comments.</li>
+  <li><strong>The publishing status and scheduled time</strong> of the channel's own scheduled videos, so the app's
+      schedule matches changes the owner makes in YouTube Studio.</li>
 </ul>
 
 <h2>How the data is used</h2>
@@ -35,7 +40,14 @@ that channel. This policy explains what data the app accesses and how it is used
   <li>Data is used only to analyse and manage the owner's own channel and is shown only to the channel owner.</li>
   <li>The app computes one derived metric, "views per hour", from hourly snapshots of the public view count of the
       channel's own videos. It is labelled in the app as an estimate calculated by the app, not a YouTube metric.</li>
-  <li>Data is not sold, not shared with third parties, and not used for advertising.</li>
+  <li>Replies to comments: once a day the app drafts replies to new comments. Short, friendly replies are posted
+      automatically as the channel (at most 25 per day); replies to corrections, criticism or business requests are
+      posted only after the owner approves or edits them. Spam and abusive comments are ignored.</li>
+  <li>AI processing: to draft replies and to analyse the channel, the relevant data (for example comment text and
+      display names, or aggregated Analytics figures) is sent to Anthropic's Claude AI service, which processes it on
+      the owner's behalf under <a href="https://www.anthropic.com/legal/privacy">Anthropic's privacy policy</a>. No other
+      third party receives it.</li>
+  <li>Data is not sold, not shared with other third parties, and not used for advertising.</li>
 </ul>
 
 <h2>Storage and retention</h2>
@@ -44,12 +56,14 @@ that channel. This policy explains what data the app accesses and how it is used
   <li>Public YouTube data of other channels (trend research) and per-fetch snapshots are deleted after 30 days.</li>
   <li>The channel's own Analytics data is refreshed daily; rows older than the refreshed window (90 days) are deleted.</li>
   <li>Hourly view-count snapshots are kept for 30 days.</li>
+  <li>Comments and the app's record of its replies are deleted 30 days after they were fetched. The replies themselves
+      stay on YouTube until the owner or the commenter deletes them there.</li>
 </ul>
 
 <h2>Revoking access and deleting data</h2>
 <p>Access can be revoked at any time from the Google security settings page:
 <a href="https://security.google.com/settings/security/permissions">https://security.google.com/settings/security/permissions</a>.
-After revocation the app can no longer read or upload anything. All YouTube API data the app stored is deleted within
+After revocation the app can no longer read, upload or reply to anything. All YouTube API data the app stored is deleted within
 30 days of revocation, or immediately on request by deleting the app's local data folder (state and secrets).</p>
 
 <h2>Changes</h2>
